@@ -19,6 +19,9 @@ import { DepBancaireComponent } from './dep-bancaire/dep-bancaire.component';
 import { DepCaisseComponent } from './dep-caisse/dep-caisse.component';
 import { RecCaisseComponent } from './rec-caisse/rec-caisse.component';
 import { ComptesComponent } from './comptes/comptes.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { PaymentDetailFormComponent } from './payment-details/payment-detail-form/payment-detail-form.component';
+import { CompteDetailService } from './shared/comptes.service';
 
 
 @NgModule({
@@ -33,7 +36,11 @@ import { ComptesComponent } from './comptes/comptes.component';
     RecBancaireComponent,
     DepBancaireComponent,
     DepCaisseComponent,
-    RecCaisseComponent
+    RecCaisseComponent,
+    PaymentDetailsComponent,
+    PaymentDetailFormComponent
+    
+
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,7 @@ import { ComptesComponent } from './comptes/comptes.component';
     }),
     FormsModule
   ],
-  providers: [UserService, {
+  providers: [UserService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

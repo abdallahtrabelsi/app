@@ -72,7 +72,7 @@
 													<th>COMPTE</th>
 													<th>DEPART DB</th>
 													<th>DEPART CR</th>
-													<th>ACTIONS</th>
+													
 												</tr>
 											</thead>
 										    <tbody>
@@ -105,14 +105,14 @@
 				<div class="modal-dialog modal-dialog-centered" role="document" >
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title">Encaissement Espece</h5>
+							<h5 class="modal-title">Comptes</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
 						<div class="modal-body">
-							<form>
-
+							<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+								<input type="hidden" name="compteDetailId" [value]="service.formData.CompteDetailId" />
 								<div class="row form-row">
 									<div class="col-12 col-sm-8">
 										<div class="form-group">
@@ -200,7 +200,7 @@
 									
 								</div>
 
-								<button type="submit" class="btn btn-primary btn-block">ENREGISTRER</button>
+								<button type="submit"  [disabled]="form.invalid" class="btn btn-primary btn-block">ENREGISTRER</button>
 							</form>
 						</div>
 					</div>
